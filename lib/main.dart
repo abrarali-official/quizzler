@@ -96,6 +96,8 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: FlatButton(
+              shape: ShapeBorder.lerp(
+                  const CircleBorder(), const CircleBorder(), 1),
               textColor: Colors.white,
               color: Colors.green,
               child: const Text(
@@ -116,6 +118,8 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: FlatButton(
+              shape: ShapeBorder.lerp(
+                  const CircleBorder(), const CircleBorder(), 1),
               color: Colors.red,
               child: const Text(
                 'False',
@@ -131,8 +135,11 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
-        Row(
-          children: scoreKeeper,
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: scoreKeeper,
+          ),
         )
       ],
     );
